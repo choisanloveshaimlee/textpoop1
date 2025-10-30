@@ -1,20 +1,17 @@
+# streamlit_lotto_app.py
+# Lotto 번호 추천 + 최신 당첨번호 비교 (대한민국 로또 6/45)
+# 실행: pip install streamlit requests beautifulsoup4
+#       streamlit run streamlit_lotto_app.py
+
 import streamlit as st
 import random
+import requests
+import re
+from typing import List, Tuple, Dict
 
-def generate_lotto_numbers(num_sets):
-    """
-    지정된 횟수만큼 로또 번호 (1부터 45 중 중복 없이 6개)를 생성합니다.
-    """
-    lotto_results = []
-    for _ in range(num_sets):
-        # 1부터 45까지의 숫자 리스트에서 중복 없이 6개의 숫자를 무작위로 선택
-        numbers = sorted(random.sample(range(1, 46), 6))
-        lotto_results.append(numbers)
-    return lotto_results
+st.set_page_config(page_title="로또 번호 추첨기", layout="centered")
 
-# Streamlit 앱의 제목 설정
-st.title('로또 번호 생성기 🎰')
-st.markdown('1부터 45 사이의 숫자 중 6개의 숫자를 무작위로 생성합니다.')
+st.title("🇰🇷 로또(6/45) 번호 추첨기 — Streamlit 앱")
+st.markdown("원하는 세트 수만큼 1~45 사이의 숫자 6개를 추천해줍니다. 또한 최신 회차 당첨번호와 비교할 수 있습니다.")
 
-# 사용자로부터 몇 세트의 로또 번호를 생성할지 입력받음
-num_set
+# ------------------- 유틸리티 함수 -------------------
