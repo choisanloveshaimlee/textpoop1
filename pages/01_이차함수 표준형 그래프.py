@@ -66,8 +66,8 @@ with col2:
     st.warning("⚠️ **주의!** 식에서 $x-p$일 때 꼭짓점 $x$좌표는 $+p$입니다.")
     st.info(f"""
     **🔍 관찰 결과:**
-    * 꼭짓점의 좌표는 $(\mathbf{p}, 0)$입니다.
-    * $y=2x^2$의 그래프를 **x축 방향으로** $\mathbf{p}$ 만큼 평행이동한 것입니다.
+    * 꼭짓점의 좌표는 $(\mathbf{{p}}, 0)$입니다.
+    * $y=2x^2$의 그래프를 **x축 방향으로** $\mathbf{{p}}$ 만큼 평행이동한 것입니다.
     """)
 
 st.markdown("---")
@@ -94,8 +94,8 @@ with col3:
 with col4:
     st.info(f"""
     **🔍 관찰 결과:**
-    * 꼭짓점의 좌표는 $(0, \mathbf{q})$입니다.
-    * $y=2x^2$의 그래프를 **y축 방향으로** $\mathbf{q}$ 만큼 평행이동한 것입니다.
+    * 꼭짓점의 좌표는 $(0, \mathbf{{q}})$입니다.
+    * $y=2x^2$의 그래프를 **y축 방향으로** $\mathbf{{q}}$ 만큼 평행이동한 것입니다.
     """)
 
 st.markdown("---")
@@ -123,7 +123,8 @@ st.subheader(f"최종 그래프: $y={a_val_all}(x-{p_val_all})^2 + {q_val_all}$"
 fig_all = plot_parabola(a_val_all, p_val_all, q_val_all, f'통합: $y={a_val_all}(x-{p_val_all})^2 + {q_val_all}$')
 st.pyplot(fig_all)
 
-st.success(f"""
+# 오류가 났던 f-string 부분을 일반 문자열로 수정했습니다.
+st.success("""
 **🎉 최종 정리:**
 * 표준형 $\mathbf{y=a(x-p)^2+q}$ 는 $\mathbf{y=ax^2}$ 그래프를 **x축으로 $\mathbf{p}$만큼, y축으로 $\mathbf{q}$만큼** 평행이동한 것입니다.
 * 그래프의 꼭짓점의 좌표는 $(\mathbf{p}, \mathbf{q})$ 입니다.
